@@ -1,8 +1,10 @@
+import time
+import pyautogui
  # Caesar Cipher Hacker
 
  # https://www.nostarch.com/crackingcodes/ (BSD Licensed)
 
-message = 'guv6Jv6Jz!J6rp5r7Jzr66ntrM'
+message = pyautogui.prompt(text="Input Caesar Cipher to be decrypted.", title="Caesar Hacker", default="")
 SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.'
 
  # Loop through every possible key:
@@ -28,6 +30,11 @@ for key in range(len(SYMBOLS)):
         else:
             # Append the symbol without encrypting/decrypting:
             translated = translated + symbol
-
+            time.sleep(.25)
     # Display every possible decryption:
     print('Key #%s: %s' % (key, translated))
+
+
+    
+
+
